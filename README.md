@@ -129,9 +129,8 @@ const options = {
   subject: 'hello',
   html: '<h1>Hello</h1>',
   text: 'Hello',
-  reply: 'vidar@eldoy.com',
-  attachment: [readStream],
-  inline: [readStream]
+  replyTo: 'vidar@eldoy.com',
+  attachment: [readStream]
 }
 
 // Parameters: name, $, options, data
