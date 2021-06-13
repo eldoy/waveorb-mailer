@@ -1,4 +1,4 @@
-const wmail = require('../index.js')
+const wmailer = require('../index.js')
 const fs = require('fs')
 const fspath = require('path')
 const loader = require('conficurse')
@@ -21,9 +21,9 @@ const OPTIONS = {
 }
 const credentials = {}
 const config = { ...credentials, options: OPTIONS }
-const mailer = wmail(config)
+const mailer = wmailer(config)
 
-describe('wmail', () => {
+describe('wmailer', () => {
   it('should build with the right options', async () => {
     const result = await mailer.build('mail1', $, OPTIONS)
     expect(result.subject).toBe('mail1')
