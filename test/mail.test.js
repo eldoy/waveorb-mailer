@@ -19,8 +19,7 @@ const OPTIONS = {
   from: 'Waveorb <hello@waveorb.com>',
   to: 'Waveorb <hello@waveorb.com>'
 }
-const credentials = {}
-const config = { ...credentials, options: OPTIONS }
+const config = { options: OPTIONS }
 const mailer = wmailer(config)
 
 describe('wmailer', () => {
