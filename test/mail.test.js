@@ -101,7 +101,6 @@ describe('wmailer', () => {
     }
     const data = { key: 'hello' }
     const result = await mailer.send('mail1', $, options, data)
-    expect(result.id).toBeDefined()
-    expect(result.message).toBe('Queued. Thank you.')
+    expect(result.delivered.length).toEqual(1)
   })
 })

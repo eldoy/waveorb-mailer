@@ -1,7 +1,7 @@
-# Wmail
-Send emails with [Mailgun.](https://mailgun.com) Boasts the following features:
+# Waveorb Mailer
+Send emails with [Waveorb.](https://waveorb.com) Boasts the following features:
 
-* Send email with Mailgun
+* Send email with [mxmail](https://https://github.com/eldoy/mxmail)
 * Layout support
 * Supports HTML, Markdown and Mustache templates
 * Automatically converts HTML to use as text version
@@ -10,7 +10,7 @@ Made for the [Waveorb web app development platform.](https://waveorb.com)
 
 ### Installation
 ```
-npm i wmail
+npm i waveorb-mailer
 ```
 
 ### Templates
@@ -22,7 +22,7 @@ module.exports = async function(mail, $, data) {
     <html lang="en">
       <head>
         <meta http-equiv="content-type" content="text/html; charset=utf-8">
-        <title>${mail.subject || 'Wmail'}</title>
+        <title>${mail.subject || 'Waveorb Mailer'}</title>
         <style>
           body { background-color: gold; }
         </style>
@@ -86,19 +86,21 @@ content: `mail1 html content link {{data.key}}`
 Both of these techniques work in the layout as well.
 
 ### Configuration
-In `app/config` add a file called `mail.yml`:
+
+If you don't provide a config file emails will be sent through mx record lookup.
+
+To use your own email server to send mail, create a file called `mail.yml` in `app/config`:
 ```yaml
-domain: example.com
-key: mailgun-api-key
-options:
-  reply: mail@example.com
-  from: mail@example.com
-  to: mail@example.com
+host: smtp.ethereal.email
+port: 587
+auth:
+  user: virginia.cassin10@ethereal.email
+  pass: 1md9Xes49Nbfka6aFw
 ```
 
 Create a plugin in `app/plugins` called `mailer.js`:
 ```js
-const mailer = require('wmail')
+const mailer = require('waveorb-mailer')
 
 module.exports = async function(app) {
   app.mailer = mailer(app.config.mail)
@@ -136,17 +138,10 @@ const options = {
 const data = { key: 'hello' }
 const result = await mailer.send('mail1', $, options, data)
 
-// On success
+// Returns delivered and failed emails
 {
-  id: '<20190910043104.1.043A7DC389CBE263@eldoy.com>',
-  message: 'Queued. Thank you.'
-}
-
-// On error
-{
-  "id": undefined,
-  "message": "'from' parameter is missing",
-  "status": 400
+  delivered: [{ result, mail }],
+  failed: [{ result, mail }]
 }
 ```
 
