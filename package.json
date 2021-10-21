@@ -9,15 +9,15 @@
   "author": "Vidar Eldøy <vidar@eldoy.com>",
   "license": "MIT",
   "devDependencies": {
-    "conficurse": "^0.3.4",
-    "jest": "^27.0.4"
+    "conficurse": "^0.3.5",
+    "jest": "^27.3.1"
   },
   "dependencies": {
     "html-to-text": "^8.0.0",
     "lodash": "^4.17.21",
-    "marked": "^2.0.7",
+    "marked": "^3.0.7",
     "mustache": "^4.2.0",
-    "mxmail": "^0.5.5",
-    "tomarkup": "^0.6.0"
+    "mxmail": "^0.5.6",
+    "tomarkup": "^0.8.0"
   }
 }
