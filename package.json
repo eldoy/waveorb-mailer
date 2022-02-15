@@ -17,7 +17,7 @@
     "lodash": "^4.17.21",
     "marked": "^4.0.12",
     "mustache": "^4.2.0",
-    "mxmail": "^0.5.6",
+    "mxmail": "^0.5.7",
     "tomarkup": "^0.9.1"
   }
 }
