@@ -1,7 +1,7 @@
 # Waveorb Mailer
 Send emails with [Waveorb.](https://waveorb.com) Boasts the following features:
 
-* Send email with [mxmail](https://https://github.com/eldoy/mxmail)
+* Send email with [mxmail](https://github.com/eldoy/mxmail)
 * Layout support
 * Supports HTML, Markdown and Mustache templates
 * Automatically converts HTML to use as text version
