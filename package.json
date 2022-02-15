@@ -10,14 +10,14 @@
   "license": "MIT",
   "devDependencies": {
     "conficurse": "^0.3.5",
-    "jest": "^27.3.1"
+    "jest": "^27.5.1"
   },
   "dependencies": {
-    "html-to-text": "^8.0.0",
+    "html-to-text": "^8.1.0",
     "lodash": "^4.17.21",
-    "marked": "^3.0.7",
+    "marked": "^4.0.12",
     "mustache": "^4.2.0",
     "mxmail": "^0.5.6",
-    "tomarkup": "^0.8.0"
+    "tomarkup": "^0.9.1"
   }
 }
