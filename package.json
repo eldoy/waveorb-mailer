@@ -1,6 +1,6 @@
 {
   "name": "waveorb-mailer",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Waveorb email client with support for templates and layouts",
   "main": "index.js",
   "scripts": {
