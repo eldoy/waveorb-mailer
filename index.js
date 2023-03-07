@@ -11,11 +11,14 @@ const tomarkup = require('tomarkup')({
 })
 
 function strip(str) {
-  return str.split('\n').map(line => line.trim()).join('\n')
+  return str
+    .split('\n')
+    .map((line) => line.trim())
+    .join('\n')
 }
 
 async function defaultLayout(mail, $, data) {
-  return /* html */`
+  return /* html */ `
     <!doctype html>
     <html>
       <head>
@@ -29,7 +32,7 @@ async function defaultLayout(mail, $, data) {
   `
 }
 
-module.exports = function(config = {}) {
+module.exports = function (config = {}) {
   const client = mxmail(config)
   /** Possible options
    * to: 'Vidar Eldøy <vidar@eldoy.com>',
@@ -41,8 +44,9 @@ module.exports = function(config = {}) {
    * text: 'Helloæøå',
    * replyTo: 'vidar@eldoy.com',
    * attachments: [file]
-  */
+   */
   async function build(mail, $ = {}, options = {}, data = {}) {
+    if (!$.app) $.app = {}
     if (typeof mail === 'string') {
       let fn = _.get($.app.mail, mail)
       if (typeof fn !== 'function') {
@@ -54,7 +58,7 @@ module.exports = function(config = {}) {
         if (fs.existsSync(md)) {
           json.file = md
         }
-        fn = async function($, data) {
+        fn = async function ($, data) {
           return json
         }
       }
